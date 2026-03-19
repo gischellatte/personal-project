@@ -1,3 +1,3 @@
-#Hangman Portfolio
+#Personal Project Portfolio
 
-An interactive **Hangman Game** that I created using **HTML, CSS and JavaScript**, featuring a cool animation. Players can guess the letters using their device screen or keyboard. Players need to guess **5 cities** correctly in order to **win the game**. Enjoy playing!
+This portfolio showcases the projects, progress and skills as a Software Engineer Trainee at _Nology. In this project, I applied HTML, CSS, and JavaScript to build the online portfolio. The layout is designed to be organised, user-friendly and responsive across various screens and devices.
