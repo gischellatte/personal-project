@@ -97,10 +97,10 @@
           </ul>
           </article>
       </section>  
-      <section>
-           <h1>Personal projects</h1>
-            <article  class="project">
-              <figure  class="project__detail"  style="">
+      <section class = "section__projects">
+           <h1>Personal Projects</h1>
+            <article class="project">
+              <figure  class="slide__content animation__fading project__detail">
                 <a href="https://www.cicsydney.org/cic-spj/"  class="project__link" target="_blank">
                     <img src="./assets/St-Peter-Julian.png" alt="SPJ Catholic Church">
                 </a>
@@ -108,7 +108,7 @@
                     <p>Photo Credit: Kevin Dang - Google Photo</p>
                 </figcaption>
               </figure>
-              <figure  class="project__detail">
+              <figure  class="slide__content animation__fading project__detail">
                 <a href="https://motific.com.au/" class="project__link" target="_blank">
                     <img src="./assets/motific_606px_519px.png" alt="Motific Project snapshot">
                 </a>
@@ -116,13 +116,26 @@
                     <p>Photo Credit: McKenzie Partners</p>
                 </figcaption>
               </figure>
-              <figure  class="project__detail">
+              <figure  class="slide__content animation__fading project__detail">
                 <a href="https://github.com/gischellatte/hangman-project" class="project__link" target="_blank">
                     <img src="./assets/hangman_thumbnail_606px_519px.png" alt="placeholder">
                 </a>
                 <figcaption>I developed an interactive <a href="https://github.com/gischellatte/hangman-project" target="_blank">Hangman Game</a>  using HTML, CSS and JavaScript. Challenge yourself to guess the South Korean Cities!</figcaption>
               </figure>
+              <figure  class="slide__content animation__fading project__detail">
+                <a href="https://github.com/gischellatte/todo-app" class="project__link" target="_blank">
+                    <img src="./assets/taskmgmt_606px_519px.png" alt="Task Management app snapshot">
+                </a>
+                <figcaption>A <a href="https://github.com/gischellatte/todo-app">Task Management app</a> created using Java Springboot and React JS.
+                </figcaption>
+              </figure>
             </article>
+            <button class="button__back" onclick="naviGateSlide(-1)">
+                &#10094;
+            </button>
+            <button class="button__next" onclick="naviGateSlide(1)">
+                &#10095;
+            </button>
       </section>
       <section>
             <h1>Contact</h1>           
@@ -156,11 +169,47 @@
                 </figcaption>
             </figure> 
         </section> 
-        <section>
-            
-        </section>
     </main>
 <footer>Copyright </footer>
-    <script>document.querySelector('footer').textContent += new Date().getFullYear();</script>
+<script>document.querySelector('footer').textContent += new Date().getFullYear();
+
+      let slideIndex = 0;
+      let slidesToShow = 4; 
+      playSlides();
+
+      function playSlides () {
+   
+        let allSlides = document.getElementsByClassName("slide__content");
+
+        for (let y = 0; y < allSlides.length; y++) {
+            allSlides[y].style.display = "none";
+        }
+
+        //show 3 slides at a time
+        for (let h=0; h < slidesToShow; h++) {
+            let currentSlide = slideIndex + h;
+
+            if(currentSlide < allSlides.length) {
+                allSlides[currentSlide].style.display = "flex";
+            }
+        }
+      
+      }
+
+      function naviGateSlide(d) {
+        let allSlides = document.getElementsByClassName("slide__content");
+        slideIndex += d;
+
+        if (slideIndex >= allSlides.length){
+            slideIndex = 0;
+        }
+
+        if (slideIndex < 0) {
+            slideIndex = 0;
+        }
+        playSlides();
+      }
+
+    </script>
 </body>
 </html>

@@ -24,6 +24,11 @@ footer {
   text-align: center;
 }
 
+.animation__fading {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 @media screen and (max-width: 425px) {
   section {
     border-radius: 5px;
@@ -394,6 +399,9 @@ footer {
   .project__detail figcaption .project__photocredit {
     font-size: 15px;
   }
+  .button__next, .button__back {
+    display: none;
+  }
   .hobby__caption {
     font-family: "Rammetto One", sans-serif;
     font-style: normal;
@@ -657,6 +665,19 @@ footer {
   }
   .interest__detail .interest__icon {
     padding-right: 5%;
+  }
+  .section__projects {
+    position: relative;
+  }
+  .section__projects .button__back {
+    position: absolute;
+    left: 1%;
+    bottom: 50%;
+  }
+  .section__projects .button__next {
+    position: absolute;
+    right: 1%;
+    bottom: 50%;
   }
   .project {
     display: flex;
